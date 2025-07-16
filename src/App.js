@@ -5,12 +5,13 @@ import RouterRoutes from './routes/RouterRoutes';
 import Footer from './components/common/Footer';
 import BackTop from './components/common/BackTop';
 import { FiltersProvider } from './contexts/filters/filtersContext';
-
+import  ComplexSpreadMapDemo  from './components/ComplexSpreadMapDemo';
+import UniqueRowsDataGrid from './components/UniqueRowsData';
 
 const App = () => {
   return (
     <>
-      <CommonProvider>
+      {/* <CommonProvider>
         <FiltersProvider>
           <CartProvider>
             <Header />
@@ -19,7 +20,9 @@ const App = () => {
             <BackTop />
           </CartProvider>
         </FiltersProvider>
-      </CommonProvider>
+      </CommonProvider> 
+      <ComplexSpreadMapDemo />*/}
+      <UniqueRowsDataGrid />
     </>
   );
 };
