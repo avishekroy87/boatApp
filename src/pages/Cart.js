@@ -5,9 +5,11 @@ import useDocTitle from '../hooks/useDocTitle';
 import cartContext from '../contexts/cart/cartContext';
 import CartItem from '../components/cart/CartItem';
 import EmptyView from '../components/common/EmptyView';
+import { useNavigate } from 'react-router-dom';
 
 
 const Cart = () => {
+    const navigate = useNavigate();
 
     useDocTitle('Cart');
 
@@ -37,6 +39,16 @@ const Cart = () => {
     const totalAmount = calculateCartTotal - calculateCartDiscount;
     const displayTotalAmount = displayMoney(totalAmount);
 
+    const handleCheckout = () => {
+        if (cartQuantity === 0) {
+            return;
+        }
+        // Implement checkout logic here, e.g., redirect to payment page or show a confirmation
+        console.log('Proceeding to checkout...');
+        navigate('/checkout');
+        // For now, we can just log the total amount
+        console.log(`Total amount to be paid: ${displayTotalAmount}`);
+    };
 
     return (
         <>
@@ -88,7 +100,7 @@ const Cart = () => {
                                                 <b>{displayTotalAmount}</b>
                                             </div>
                                         </div>
-                                        <button type="button" className="btn checkout_btn">Checkout</button>
+                                        <button type="button" className="btn checkout_btn" onClick={handleCheckout}  >Checkout</button>
                                     </div>
                                 </div>
                             </div>

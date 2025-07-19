@@ -11,7 +11,7 @@ import UniqueRowsDataGrid from './components/UniqueRowsData';
 const App = () => {
   return (
     <>
-      {/* <CommonProvider>
+     <CommonProvider>
         <FiltersProvider>
           <CartProvider>
             <Header />
@@ -21,8 +21,8 @@ const App = () => {
           </CartProvider>
         </FiltersProvider>
       </CommonProvider> 
-      <ComplexSpreadMapDemo />*/}
-      <UniqueRowsDataGrid />
+     
+      {/*  <ComplexSpreadMapDemo /><UniqueRowsDataGrid /> */}
     </>
   );
 };
