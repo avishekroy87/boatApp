@@ -7,6 +7,7 @@ import Home from '../pages/Home';
 import ProductDetails from '../pages/ProductDetails';
 import ErrorPage from '../pages/ErrorPage';
 import Checkout from '../pages/Checkout';
+import ThankYou from '../pages/ThankYou';
 
 
 const RouterRoutes = () => {
@@ -19,6 +20,7 @@ const RouterRoutes = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
                  <Route path="/checkout" element={<Checkout />} />
+                 <Route path="/thank-you" element={<ThankYou />} />
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-details/:productId" element={<ProductDetails />} />
                 <Route path="*" element={<ErrorPage />} />

@@ -43,13 +43,21 @@ const CartProvider = ({ children }) => {
         });
     };
 
+    const clearCart = () => {
+        return dispatch({
+            type: 'CLEAR_CART',
+            payload: {}
+        });
+    };
+
     // Context values
     const values = {
         ...state,
         addItem,
         removeItem,
         incrementItem,
-        decrementItem
+        decrementItem,
+        clearCart
     };
 
     return (

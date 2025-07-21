@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
+
 import { AiOutlineSearch, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { dropdownMenu } from '../../data/headerData';
 import commonContext from '../../contexts/common/commonContext';
@@ -13,6 +14,7 @@ const Header = () => {
     const { formUserInfo, toggleForm, toggleSearch } = useContext(commonContext);
     const { cartItems } = useContext(cartContext);
     const [isSticky, setIsSticky] = useState(false);
+    const navigate = useNavigate();
 
 
     // handle the sticky-header
@@ -26,9 +28,13 @@ const Header = () => {
         };
     }, [isSticky]);
 
-
-    const cartQuantity = cartItems.length;
-
+    // if(navigate(-1) == '/checkout'){
+    //     var cartQuantity = 0;
+    // }else{
+    //     var cartQuantity = cartItems.length;
+    // }
+    
+ var cartQuantity = cartItems.length;
 
     return (
         <>
